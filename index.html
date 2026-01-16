@@ -1,0 +1,777 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RE_ESG_가이드북_통합본(아마도랩)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "SF Arabic", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "SF Arabic", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "SF Arabic", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "SF Arabic", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "SF Arabic", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2eae1f9d-ee86-8052-8d8e-df65d8f9f9b7" class="page sans"><header><h1 class="page-title" dir="auto">RE_ESG_가이드북_통합본(아마도랩)</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-810b-912a-d294baa2c1e4" class="">🌱 RE:ESG 감정 카드 88장 가이드북</h1></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8109-aacf-fe4ef6284ca7" class=""><strong>Emotion. Self. Ground.</strong></p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81c1-b38b-f57654852853" class=""><em>감정에서 나를 만나고, 나로서 살아낸다.</em></p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81b0-878a-f1fe3f48bbe3"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-8171-aaf3-ed9ae187acb6" class="">📖 목차</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8134-a385-f12dd8585312" class="">PART 1. RE:ESG 철학과 이해</h2></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-819e-9734-e76a5507b75d" class="bulleted-list"><li style="list-style-type:disc">1.1 RE:ESG란 무엇인가</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c6-a7e9-d8b25dafe940" class="bulleted-list"><li style="list-style-type:disc">1.2 왜 감정을 ’생태’로 보는가</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81f8-804e-e6a6c31b4601" class="bulleted-list"><li style="list-style-type:disc">1.3 E·S·G 세 단계의 순환 구조</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-814f-a95e-c032c3916d93" class="bulleted-list"><li style="list-style-type:disc">1.4 자연 은유 시스템의 원리</li></ul></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-818c-819d-d21778f456e4" class="">PART 2. 카드 구조와 사용법</h2></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-810a-9ebb-f4665c8080ff" class="bulleted-list"><li style="list-style-type:disc">2.1 88장 카드의 전체 구성</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e9-8410-cb570e2770df" class="bulleted-list"><li style="list-style-type:disc">2.2 기본 72장 vs 확장 16장</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8127-ba8c-fdefbfb11e55" class="bulleted-list"><li style="list-style-type:disc">2.3 카드 읽는 법: 4단락 구조</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81a9-a711-dc3ae81ac944" class="bulleted-list"><li style="list-style-type:disc">2.4 5가지 사용 모드</li></ul></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81ac-b1a2-fde4c7258663" class="">PART 3. 단계별 감정 탐색</h2></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81bd-8a79-d8d9d6431166" class="bulleted-list"><li style="list-style-type:disc">3.1 💚 E (Emotion): 감정 인식 - 29장</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8105-8325-dbfc3b7d47a4" class="bulleted-list"><li style="list-style-type:disc">3.2 💙 S (Self): 자기 이해 - 30장</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8156-baca-f38f0514853f" class="bulleted-list"><li style="list-style-type:disc">3.3 💛 G (Ground): 뿌리내림 - 29장</li></ul></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8175-8084-ff888eaf190f" class="">PART 4. 실전 활용 가이드</h2></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81cb-bd2a-fb20d7460cc5" class="bulleted-list"><li style="list-style-type:disc">4.1 혼자 사용하기: 일상 감정 일지</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-818a-9f68-e67c9b8dfef8" class="bulleted-list"><li style="list-style-type:disc">4.2 관계에서 사용하기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d6-9f58-e3853fc98171" class="bulleted-list"><li style="list-style-type:disc">4.3 교육/상담 현장 활용</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8150-8297-e7158df0b9b8" class="bulleted-list"><li style="list-style-type:disc">4.4 워크숍 프로그램 설계</li></ul></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-814d-9dde-e00ea98387b9" class="">PART 5. 주의사항과 안전한 사용</h2></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8180-961c-e1032007c464" class="bulleted-list"><li style="list-style-type:disc">5.1 확장팩 사용 시 주의사항</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e8-94c5-ed97b3672a05" class="bulleted-list"><li style="list-style-type:disc">5.2 전문가 개입이 필요한 순간</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81b7-b4c6-fa42056c64d8" class="bulleted-list"><li style="list-style-type:disc">5.3 긴급 도움 연결처</li></ul></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8158-9b27-fe6a66fdc179" class="">PART 6. 부록</h2></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d8-b60a-f5a3ea710c80" class="bulleted-list"><li style="list-style-type:disc">6.1 전체 88장 카드 간단 인덱스</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8152-93d4-f885569a449d" class="bulleted-list"><li style="list-style-type:disc">6.2 상황별 추천 카드</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81ec-8000-f7b13961d0cf" class="bulleted-list"><li style="list-style-type:disc">6.3 감정 탐색 워크시트</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81b6-9b64-da6ff1099866" class="bulleted-list"><li style="list-style-type:disc">6.4 FAQ</li></ul></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8173-bd88-fcd45d620c07"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-8135-a322-cdcc7b3666c4" class="">PART 1. RE:ESG 철학과 이해</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-815e-a440-f158cb5e31a4" class="">1.1 RE:ESG란 무엇인가</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81d2-9e38-c0d4059b76f2" class="">🌍 전통적 ESG에서 감정적 ESG로</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-819c-93c8-e1f858f84238" class="">RE:ESG는 기업의 지속가능성 프레임워크인 <strong>ESG(Environment, Social, Governance)</strong>를 개인의 감정 생태 회복 시스템으로 재해석한 개념입니다.</p></div><div style="display:contents" dir="ltr"><table id="2eae1f9d-ee86-81d1-85f7-c4d503109ebf" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81ad-aa8b-e73ed60b4834"><th id="[:Ky" class="simple-table-header-color simple-table-header">전통적 ESG</th><th id="dfRh" class="simple-table-header-color simple-table-header">RE:ESG 재정의</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-8105-896a-e68a14b2a557"><td id="[:Ky" class=""><strong>E</strong>nvironment (환경)</td><td id="dfRh" class=""><strong>E</strong>motion (감정) - 내면 생태계 회복</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81cb-bb64-fe0eb3986558"><td id="[:Ky" class=""><strong>S</strong>ocial (사회)</td><td id="dfRh" class=""><strong>S</strong>elf (자기) - 자기 이해와 서사</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-8139-905b-c186fd6c5773"><td id="[:Ky" class=""><strong>G</strong>overnance (지배구조)</td><td id="dfRh" class=""><strong>G</strong>round (뿌리내림) - 존재의 안정</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8102-98c3-ecd720e1bdb5" class="">💡 핵심 철학</h3></div><div style="display:contents" dir="auto"><blockquote id="2eae1f9d-ee86-8106-9fa1-e638aec2a1a0" class="">“감정은 나의 생태이며,<div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81f8-b55e-db337951f6bb" class="">함께 울고 피어나는 관계가 곧 나의 사회다.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81bb-b989-cf36d031d023" class="">그리고 내 삶의 리더십은,</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81d4-9099-ff7fc344f68c" class="">나를 잃지 않기 위한 감정 윤리에서 비롯된다.”</p></div></blockquote></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81e6-952b-dd20dabe9d95"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81eb-b77e-d60dc1fd41e4" class="">1.2 왜 감정을 ’생태’로 보는가</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-811d-9e1b-c9fff77bd33a" class="">🌿 에코사이콜로지(Ecopsychology)와의 연결</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ae-941b-fe62909db879" class="">감정 생태란, 인간의 감정을 <strong>자연 생태계처럼 순환하고 회복하는 유기적 시스템</strong>으로 이해하는 관점입니다.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8114-bb1a-edb6716e5f88" class=""><strong>자연 생태계의 특징:</strong><br/>- 🔄 순환: 계절이 돌고 돌듯, 감정도 왔다가 사라진다<br/>- 🌱 회복력: 숲이 재생하듯, 마음도 치유된다<br/>- 🕸️ 상호연결: 모든 요소가 연결되어 있다<br/>- ⚖️ 균형: 과하거나 모자라면 문제가 생긴다</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8192-9d55-c06b169567f6" class="">🌍 기후위기 시대의 감정 회복</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-815c-aeec-d26ed2184345" class="bulleted-list"><li style="list-style-type:disc">외부 환경(지구)의 위기 → 내부 감정(마음)의 위기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8150-ae7a-d7fbad17e5d8" class="bulleted-list"><li style="list-style-type:disc">자연과의 단절 → 자기와의 단절</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-812d-a9cf-f3384cf8daef" class="bulleted-list"><li style="list-style-type:disc">생태계 회복 → 감정 생태 회복</li></ul></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8119-b09d-dab63dd35a1e" class=""><strong>자연을 돌보는 마음과 나를 돌보는 마음은 같은 뿌리에서 나옵니다.</strong></p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-812e-96a5-cb7447260817"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-810b-b1ac-e3a0adcbcefc" class="">1.3 E·S·G 세 단계의 순환 구조</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81d7-8498-d6bc3220522f" class="">💚 1단계: E (Emotion) - 감정 인식</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-819c-b083-d1df0f6654ac" class=""><strong>“지금 내가 느끼는 건 뭘까?”</strong></p></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8110-9ac2-ce27f5a3c052" class="bulleted-list"><li style="list-style-type:disc"><strong>목표</strong>: 감정을 억누르지 않고 있는 그대로 알아차리기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81f8-b06d-df3bce0ac568" class="bulleted-list"><li style="list-style-type:disc"><strong>핵심</strong>: 감정에 이름 붙이기, 신체 감각 느끼기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-813a-9838-e2767117bbab" class="bulleted-list"><li style="list-style-type:disc"><strong>은유</strong>: 씨앗이 땅속에서 싹을 틀 준비를 하는 단계</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e9-aee9-d89f6a404d6f" class="bulleted-list"><li style="list-style-type:disc"><strong>29장 카드</strong>: 기본 감정, 신체화 감정, 복합 감정</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81d8-a0a9-e239777d1d93" class="">💙 2단계: S (Self) - 자기 이해</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8174-be3c-d65ce1082c94" class=""><strong>“왜 이런 감정이 들까?”</strong></p></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d5-bdfc-f7867a5394de" class="bulleted-list"><li style="list-style-type:disc"><strong>목표</strong>: 감정 뒤의 욕구, 상처, 가치관 들여다보기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81a7-8480-d89d5346fd02" class="bulleted-list"><li style="list-style-type:disc"><strong>핵심</strong>: 자기 서사 이해하기, 패턴 발견하기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e1-8175-fe209ad47166" class="bulleted-list"><li style="list-style-type:disc"><strong>은유</strong>: 뿌리를 내리며 자신의 자리를 찾는 단계</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8161-88fe-cb2ddf75746e" class="bulleted-list"><li style="list-style-type:disc"><strong>30장 카드</strong>: 자기 관련, 관계, 내면 복잡성</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8171-8ff2-ebc69aa723fc" class="">💛 3단계: G (Ground) - 뿌리내림</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81b8-b0d8-c3f3bc604459" class=""><strong>“어떻게 회복하고 성장할까?”</strong></p></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8159-899b-ca8b587f70d5" class="bulleted-list"><li style="list-style-type:disc"><strong>목표</strong>: 감정을 수용하고 돌보며 삶에 뿌리내리기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e2-b988-e3c2da9cfdaa" class="bulleted-list"><li style="list-style-type:disc"><strong>핵심</strong>: 자기 돌봄, 관계 회복, 의미 발견</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c8-9fc4-ea7f3858aacd" class="bulleted-list"><li style="list-style-type:disc"><strong>은유</strong>: 나무가 단단히 서서 열매를 맺는 단계</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8183-ad80-e6f0194e4cc9" class="bulleted-list"><li style="list-style-type:disc"><strong>29장 카드</strong>: 안정/평화, 관계/연결, 회복/성장</li></ul></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-817e-a117-f95c85862b71"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8178-b810-f38f946b8c7f" class="">1.4 자연 은유 시스템의 원리</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81cc-9351-e4b5e6d2f68c" class="">🌳 왜 자연 은유인가?</h3></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-813e-bf47-ef9858cd2115" class="numbered-list" start="1"><li><strong>직관적 이해</strong>: 추상적 감정을 구체적 이미지로 전환</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81ab-9f70-c24cf42d6b4a" class="numbered-list" start="2"><li><strong>보편적 공감</strong>: 문화와 세대를 초월하는 원형적 이미지</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81d4-b34b-ef6bd687e868" class="numbered-list" start="3"><li><strong>치유적 효과</strong>: 자연 이미지 자체가 심리적 안정감 제공</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-817d-a8aa-f0274490e963" class="numbered-list" start="4"><li><strong>연결 회복</strong>: 자연과 나를 동시에 돌보는 마음</li></ol></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81a6-ab4b-ca5abe6b3634" class="">🎨 자연 요소 카테고리</h3></div><div style="display:contents" dir="ltr"><table id="2eae1f9d-ee86-8185-bfc8-d1024b5bb502" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-815c-99c1-fe75d3147dc4"><th id="M~ss" class="simple-table-header-color simple-table-header">카테고리</th><th id="ek@[" class="simple-table-header-color simple-table-header">주요 이미지</th><th id="]}&gt;Q" class="simple-table-header-color simple-table-header">대표 감정</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-8105-aa15-ca28eab7a393"><td id="M~ss" class=""><strong>식물</strong></td><td id="ek@[" class="">씨앗, 새싹, 꽃, 나무, 뿌리</td><td id="]}&gt;Q" class="">성장, 희망, 회복</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-8184-84f1-d97db38672db"><td id="M~ss" class=""><strong>날씨</strong></td><td id="ek@[" class="">햇살, 비, 바람, 안개, 구름</td><td id="]}&gt;Q" class="">기쁨, 슬픔, 혼란</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81f1-aee6-f678d4af92ba"><td id="M~ss" class=""><strong>물</strong></td><td id="ek@[" class="">호수, 바다, 강, 시냇물</td><td id="]}&gt;Q" class="">평화, 슬픔, 흐름</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-815e-b3fa-c62185bd68e1"><td id="M~ss" class=""><strong>땅</strong></td><td id="ek@[" class="">들판, 숲, 산, 흙, 돌</td><td id="]}&gt;Q" class="">안정, 뿌리내림</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-814a-a667-ebb5f3943158"><td id="M~ss" class=""><strong>불</strong></td><td id="ek@[" class="">활화산, 불꽃, 타오름</td><td id="]}&gt;Q" class="">분노, 열정, 에너지</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8190-878f-f5a339ef23c7"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-818f-b8d7-d6cd6468f03f" class="">PART 2. 카드 구조와 사용법</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-818a-a536-f050c60c30b6" class="">2.1 88장 카드의 전체 구성</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81b6-9044-c44d042a424a" class="">📦 구성 개요</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81be-a40a-c9e7819dcfc7" class=""><strong>총 88장 = 기본 72장 + 확장 16장</strong></p></div><div style="display:contents" dir="ltr"><table id="2eae1f9d-ee86-8159-80d5-cb787c3b35cb" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-815a-b1ae-f7155b01b286"><th id="ZLyd" class="simple-table-header-color simple-table-header">구분</th><th id="gp;p" class="simple-table-header-color simple-table-header">E (Emotion)</th><th id="\rm\" class="simple-table-header-color simple-table-header">S (Self)</th><th id="tDUC" class="simple-table-header-color simple-table-header">G (Ground)</th><th id="jozq" class="simple-table-header-color simple-table-header">합계</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-810d-b62a-e7ac0be40fac"><td id="ZLyd" class=""><strong>기본 세트</strong></td><td id="gp;p" class="">24장</td><td id="\rm\" class="">24장</td><td id="tDUC" class="">24장</td><td id="jozq" class=""><strong>72장</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81f4-95a9-f3c98cd97302"><td id="ZLyd" class=""><strong>확장 팩</strong></td><td id="gp;p" class="">5장</td><td id="\rm\" class="">6장</td><td id="tDUC" class="">5장</td><td id="jozq" class=""><strong>16장</strong></td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-8175-a211-e6ffa3d324e8"><td id="ZLyd" class=""><strong>총계</strong></td><td id="gp;p" class=""><strong>29장</strong></td><td id="\rm\" class=""><strong>30장</strong></td><td id="tDUC" class=""><strong>29장</strong></td><td id="jozq" class=""><strong>88장</strong></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-819d-a439-c6f84c622eb2"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8186-a190-fb1a6ecb36fc" class="">2.2 기본 72장 vs 확장 16장</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81b6-bdad-f92cea5a341b" class="">📘 기본 72장: 일상 감정 문해력</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ae-81be-f993f3a66000" class=""><strong>대상:</strong> 감정 인식 입문자, 일반 사용자</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8175-a65b-dbabf4f6e080" class=""><strong>특징:</strong><br/>- 일상에서 자주 경험하는 감정<br/>- 명확하고 보편적인 감정어<br/>- 안전하게 혼자 탐색 가능</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-818f-92c7-f60e349e7563" class="">📕 확장 16장: 감정 문해력 심화</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-811f-baed-f71c360eae9a" class=""><strong>대상:</strong> 기본 72장에 익숙한 사용자, 전문가</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8126-8d6d-e5d12e626830" class=""><strong>특징:</strong><br/>- 미묘하고 복잡한 감정 구분<br/>- 다루기 까다로운 강렬한 감정<br/>- 전문가 지도 권장</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8129-90bb-e19279fdba67" class=""><strong>권장 순서:</strong><br/>1. 기본 72장 4-8주 사용<br/>2. G 확장팩(성장/회복) 먼저<br/>3. E 확장팩(복잡한 감정)<br/>4. S 확장팩(깊은 자기 탐색) - 전문가 동반</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8182-9bbc-fe5b53626584"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8139-b52d-de44b15fa664" class="">2.3 카드 읽는 법: 4단락 구조</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81af-bdf4-f0c734987e55" class="">1️⃣ “이 감정은:” - 감정 정의</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8197-bc7b-e6cdbc085921" class=""><strong>목적:</strong> 감정을 자연 은유로 이해하기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-814d-a447-eff2923bc5b4" class=""><strong>예시 (E-01 기쁨):</strong><br/>&gt; “기쁨은 햇살 가득한 들판처럼 마음이 환해지고 에너지가 솟아나는 감정입니다…”</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-815c-a45a-d63168de93e9" class="">2️⃣ “이 감정이 말하는 것:” - 감정의 목소리</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ab-bcec-f7ace3541aca" class=""><strong>목적:</strong> 감정이 전하려는 메시지 듣기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-816b-9e67-fc0015a2211e" class=""><strong>예시:</strong> “지금 이 순간이 좋아. 이대로 괜찮아.”</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-819f-8b30-c16b14327e6d" class="">3️⃣ “돌봄 제안:” - 구체적 돌봄 방법</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8176-a647-d27fea79812d" class=""><strong>목적:</strong> 감정을 어떻게 돌볼지 안내</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81f2-befa-e832f88c140e" class="">4️⃣ “당신에게:” - 격려와 인정</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8143-9572-d7b38147e14c" class=""><strong>목적:</strong> 이 감정을 느끼는 자신 인정하고 격려하기</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8144-9cb0-c358f1529554"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81f9-aa27-d9822a09dd26" class="">2.4 5가지 사용 모드</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81a4-801b-d257810af96d" class="">🙋 모드 1: 솔로 모드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8168-a8f2-e9de13354f54" class=""><strong>방법:</strong><br/>- A. 직관 뽑기: 눈 감고 끌리는 카드<br/>- B. 의도 뽑기: 질문하고 답 찾기<br/>- C. 단계별 탐색: E → S → G</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81b0-9d5a-e60bf573011b" class="">👥 모드 2: 듀얼 모드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81e8-9b63-e0ab9f4ddf5d" class=""><strong>활용:</strong><br/>- 연인, 부부, 친구와 감정 나누기<br/>- 대화 시작 도구<br/>- 공감 연습</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8196-abda-e9d2a0014fd4" class="">👨‍👩‍👧‍👦 모드 3: 그룹 모드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ec-9623-c693d4519687" class=""><strong>활용:</strong><br/>- 가족, 팀, 모임에서 감정 체크인<br/>- 주제 탐색<br/>- 감정 게임</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8193-b5cd-f47e8f286d66" class="">🧑‍🏫 모드 4: 테라피 모드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8173-9a7c-efcdcdaf7243" class=""><strong>활용:</strong><br/>- 상담사와 함께 감정 평가<br/>- 감정 교육 자료<br/>- 트라우마 작업 (전문가만)</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81c9-8d45-d038ba277004" class="">📚 모드 5: 교육 모드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8106-bef1-ef34268f4d86" class=""><strong>활용:</strong><br/>- 학교, 기업 교육<br/>- 감정 어휘 확장<br/>- 창의적 표현</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-813f-879c-e39414478692"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-81bc-a4c3-f753ec3f2b5d" class="">PART 3. 단계별 감정 탐색</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-819d-bde6-ff5d5b3c0376" class="">3.1 💚 E (Emotion): 감정 인식 - 29장</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8117-889a-cee360c485aa" class="">기본 감정 (12장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-813a-a908-f6201eb49bce" class="bulleted-list"><li style="list-style-type:disc">E-01 기쁨 (Joy) - 햇살 가득한 들판</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81ab-b53e-e32e23a5bafd" class="bulleted-list"><li style="list-style-type:disc">E-02 슬픔 (Sadness) - 비에 젖은 낙엽</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8172-977d-cdb1dd48f1f7" class="bulleted-list"><li style="list-style-type:disc">E-03 분노 (Anger) - 활화산</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8136-bb28-e60fa724fecc" class="bulleted-list"><li style="list-style-type:disc">E-04 두려움 (Fear) - 소용돌이치는 바다</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d6-ba7b-db9c5bca5856" class="bulleted-list"><li style="list-style-type:disc">E-05 불안 (Anxiety) - 흔들리는 꽃밭</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8132-a048-eaa8d65907e4" class="bulleted-list"><li style="list-style-type:disc">E-06 외로움 (Loneliness) - 달빛 아래 홀로 선 나무</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8164-8c8a-f5216c00bfb8" class="bulleted-list"><li style="list-style-type:disc">E-07 희망 (Hope) - 땅을 뚫고 나온 새싹</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81b2-a4a7-d95ada856320" class="bulleted-list"><li style="list-style-type:disc">E-08 환희 (Ecstasy) - 무지개</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8174-890f-cb0539e278db" class="bulleted-list"><li style="list-style-type:disc">E-09 설렘 (Excitement) - 열리기 직전의 꽃봉오리</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-810e-81e6-e3422f28a1aa" class="bulleted-list"><li style="list-style-type:disc">E-10 우울 (Depression) - 흐린 하늘</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8184-a4d1-e5676302cda2" class="bulleted-list"><li style="list-style-type:disc">E-11 걱정 (Worry) - 구름 낀 하늘</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8103-adc6-f26851ff1b9c" class="bulleted-list"><li style="list-style-type:disc">E-12 활력 (Vitality) - 파도치는 바다</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81e6-906a-c3ad3f8c831c" class="">신체화 감정 (6장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d2-8650-d023529649c2" class="bulleted-list"><li style="list-style-type:disc">E-13 긴장 (Tension) - 팽팽히 당겨진 줄기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8119-af92-dcc63b4c3822" class="bulleted-list"><li style="list-style-type:disc">E-14 숨막힘 (Suffocation)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c7-a21a-e9561633d63c" class="bulleted-list"><li style="list-style-type:disc">E-15 얼어붙음 (Freeze) - 얼어붙은 호수</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8161-b48f-f6f9b4dbbf2a" class="bulleted-list"><li style="list-style-type:disc">E-16 피로 (Fatigue) - 고개 숙인 해바라기</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8152-b00b-e1785f42494d" class="bulleted-list"><li style="list-style-type:disc">E-17 무거움 (Heaviness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81ce-94d9-d3938cc8ebc3" class="bulleted-list"><li style="list-style-type:disc">E-18 떨림 (Trembling) - 떨리는 가지</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81ce-859a-cafb7f870b3b" class="">복합 1차 감정 (6장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-812c-b658-e68cc6070b24" class="bulleted-list"><li style="list-style-type:disc">E-19 혼란 (Confusion) - 안개 낀 숲</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c1-949d-edc3a4866926" class="bulleted-list"><li style="list-style-type:disc">E-20 상실 (Loss) - 뿌리만 남은 식물</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-811f-b62b-d5dde3ce2143" class="bulleted-list"><li style="list-style-type:disc">E-21 질투 (Jealousy) - 다른 나무를 감싼 덩굴</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8159-963c-f334e3765310" class="bulleted-list"><li style="list-style-type:disc">E-22 부러움 (Envy)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e5-932b-ea8a48c35052" class="bulleted-list"><li style="list-style-type:disc">E-23 공포 (Terror) - 어두운 동굴</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81cc-b91f-d2d05d723f39" class="bulleted-list"><li style="list-style-type:disc">E-24 놀람 (Surprise)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81d3-8d13-d5f71a3b82fa" class="">확장 팩 (5장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81a7-899a-df758d4e6a2a" class="bulleted-list"><li style="list-style-type:disc">E-25 혐오 (Disgust)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e0-9c13-d63fcd937ed5" class="bulleted-list"><li style="list-style-type:disc">E-26 민망함 (Mortification)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-814a-bc34-da5374023c4f" class="bulleted-list"><li style="list-style-type:disc">E-27 당혹감 (Embarrassment)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8146-8e8a-fdeb7082f8cf" class="bulleted-list"><li style="list-style-type:disc">E-28 격분 (Rage) ⚠️</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81db-96b9-f647544193f4" class="bulleted-list"><li style="list-style-type:disc">E-29 동요 (Agitation) - 흔들리는 얇은 가지</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-815b-b835-c2480405bd2c" class="">E 단계 사용 가이드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8158-8396-eb63337f5d23" class=""><strong>✅ 해야 할 것:</strong><br/>1. 감정 이름 붙이기<br/>2. 신체 감각 느끼기<br/>3. 감정 인정하기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-816b-9380-d795b8ae126d" class=""><strong>❌ 하지 말아야 할 것:</strong><br/>1. 감정 억압하기<br/>2. 감정 판단하기<br/>3. 성급하게 해결하려 하기</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81e8-92eb-e67fc679431a"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81b8-8b97-d57cbdb4fe69" class="">3.2 💙 S (Self): 자기 이해 - 30장</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8117-a3bc-deba6e734715" class="">자기 관련 핵심 (12장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81ce-abfa-db3b260963a5" class="bulleted-list"><li style="list-style-type:disc">S-01 자책 (Self-blame)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8181-a072-e3e4aef9c82c" class="bulleted-list"><li style="list-style-type:disc">S-02 죄책감 (Guilt)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c8-8f26-e8b5f9c2f819" class="bulleted-list"><li style="list-style-type:disc">S-03 수치심 (Shame)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-816a-883f-d8b251eea8db" class="bulleted-list"><li style="list-style-type:disc">S-04 자부심 (Pride)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8181-bc80-fe8d62d1b6bc" class="bulleted-list"><li style="list-style-type:disc">S-05 무력감 (Helplessness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8108-b820-d25b5232612e" class="bulleted-list"><li style="list-style-type:disc">S-06 좌절 (Frustration)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e7-bdbe-e3e462bd1912" class="bulleted-list"><li style="list-style-type:disc">S-07 성취 (Achievement)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8164-89ee-df5ac92e3896" class="bulleted-list"><li style="list-style-type:disc">S-08 만족 (Satisfaction)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8134-9229-db12015d599c" class="bulleted-list"><li style="list-style-type:disc">S-09 그리움 (Longing)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8141-84be-cbc659c628e4" class="bulleted-list"><li style="list-style-type:disc">S-10 공허함 (Emptiness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d8-ace6-df09419d852f" class="bulleted-list"><li style="list-style-type:disc">S-11 체념 (Resignation)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8185-9abb-dbe71adf3d38" class="bulleted-list"><li style="list-style-type:disc">S-12 연민 (Compassion)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81b1-a127-e753be436832" class="">관계 감정 (6장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8131-8945-f4cf5e3f943b" class="bulleted-list"><li style="list-style-type:disc">S-13 배신감 (Betrayal)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8180-8107-dcc8f70d5013" class="bulleted-list"><li style="list-style-type:disc">S-14 원망 (Resentment)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-811f-935a-fc25d00db6b3" class="bulleted-list"><li style="list-style-type:disc">S-15 실망 (Disappointment)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8185-bd20-edb93a797b95" class="bulleted-list"><li style="list-style-type:disc">S-16 서운함 (Hurt)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-816b-a266-d94d7ccb7810" class="bulleted-list"><li style="list-style-type:disc">S-17 경계심 (Wariness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c2-99ab-c88d6d578036" class="bulleted-list"><li style="list-style-type:disc">S-18 부담감 (Burden)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81e9-92ab-f476b4655cbf" class="">복잡한 내면 (6장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81b4-b425-fa8c4f7e5f9d" class="bulleted-list"><li style="list-style-type:disc">S-19 씁쓸함 (Bittersweet)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8146-905f-c4011ccabf0e" class="bulleted-list"><li style="list-style-type:disc">S-20 착잡함 (Complexity)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-818d-9842-df3e3efb3054" class="bulleted-list"><li style="list-style-type:disc">S-21 허무함 (Futility)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8198-9f74-ca30c12f1c8d" class="bulleted-list"><li style="list-style-type:disc">S-22 무감각 (Numbness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8118-b280-dab70fa54ec6" class="bulleted-list"><li style="list-style-type:disc">S-23 냉담 (Detachment)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8164-b4ae-e968f04916a9" class="bulleted-list"><li style="list-style-type:disc">S-24 갈등 (Conflict)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8177-ae34-c5acebb824dd" class="">확장 팩 (6장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8176-beb3-ffdd0b806203" class="bulleted-list"><li style="list-style-type:disc">S-25 자기혐오 (Self-hatred) 🔴</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c4-b211-e75267bee2c9" class="bulleted-list"><li style="list-style-type:disc">S-26 자기연민 (Self-compassion)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c5-b879-cce665500723" class="bulleted-list"><li style="list-style-type:disc">S-27 뿌듯함 (Fulfillment)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e0-8ea4-f267f2dc13d9" class="bulleted-list"><li style="list-style-type:disc">S-28 미련 (Attachment)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8116-a45b-f6420884bc8b" class="bulleted-list"><li style="list-style-type:disc">S-29 회한 (Regret)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81bb-a601-dbc68f3f909a" class="bulleted-list"><li style="list-style-type:disc">S-30 경멸 (Contempt) 🟡</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8105-b8f7-f36156a66e6a" class="">S 단계 사용 가이드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81c2-a6b6-edc49364ba46" class=""><strong>✅ 해야 할 것:</strong><br/>1. 감정의 뿌리 찾기<br/>2. 패턴 발견하기<br/>3. 자기 서사 이해하기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81a7-bcbd-cadbe982361d" class=""><strong>❌ 하지 말아야 할 것:</strong><br/>1. 자책으로 빠지기<br/>2. 과거에 갇히기<br/>3. 상처 덧나게 하기</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8181-9e6e-d9daab43c371"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81d4-988a-fd705ee43ab7" class="">3.3 💛 G (Ground): 뿌리내림 - 29장</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-817e-b13c-df3422b6ee91" class="">안정/평화 (8장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8135-b373-c7f3508df2bf" class="bulleted-list"><li style="list-style-type:disc">G-01 평화 (Peace)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8183-9291-deb2a500cc81" class="bulleted-list"><li style="list-style-type:disc">G-02 안정 (Stability)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81b0-952c-d1cafa08a637" class="bulleted-list"><li style="list-style-type:disc">G-03 편안함 (Comfort)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8179-8b23-e3f8cd76407d" class="bulleted-list"><li style="list-style-type:disc">G-04 차분함 (Calmness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8195-8495-f71f34b48171" class="bulleted-list"><li style="list-style-type:disc">G-05 안도감 (Relief)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81bb-9645-c6bed21cc396" class="bulleted-list"><li style="list-style-type:disc">G-06 평온 (Serenity)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8174-9a7f-d9223b222c1c" class="bulleted-list"><li style="list-style-type:disc">G-07 고요함 (Stillness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8125-8e52-e313596d08ce" class="bulleted-list"><li style="list-style-type:disc">G-08 휴식 (Rest)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81a9-ba83-eb7bf8776c1d" class="">관계/연결 (8장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8187-82a6-c9f8cfca51a4" class="bulleted-list"><li style="list-style-type:disc">G-09 사랑 (Love)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c1-82d5-ec85974f79c9" class="bulleted-list"><li style="list-style-type:disc">G-10 감사 (Gratitude)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-817a-8746-caea0a3dc329" class="bulleted-list"><li style="list-style-type:disc">G-11 애정 (Affection)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8151-91c2-e66aaae691b8" class="bulleted-list"><li style="list-style-type:disc">G-12 유대 (Bond)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8111-8397-f70bb498a606" class="bulleted-list"><li style="list-style-type:disc">G-13 포용 (Embrace)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81fc-a99f-d9830703b69e" class="bulleted-list"><li style="list-style-type:disc">G-14 따뜻함 (Warmth)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8178-9bbf-f1ca41798c19" class="bulleted-list"><li style="list-style-type:disc">G-15 친밀함 (Intimacy)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-814c-a766-d95c3779bccc" class="bulleted-list"><li style="list-style-type:disc">G-16 교감 (Connection)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8130-9afe-e2fe2e5bce22" class="">회복/성장 (8장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d6-bf13-dd93fc6ca61d" class="bulleted-list"><li style="list-style-type:disc">G-17 수용 (Acceptance)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-814e-ba60-c68b6be13710" class="bulleted-list"><li style="list-style-type:disc">G-18 놓아줌 (Release)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-819a-bace-ec7a7dbba3e7" class="bulleted-list"><li style="list-style-type:disc">G-19 용서 (Forgiveness)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-812c-b715-ed13b3c021b9" class="bulleted-list"><li style="list-style-type:disc">G-20 희망 (Hope)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-811e-b66a-dbb51bd678fa" class="bulleted-list"><li style="list-style-type:disc">G-21 용기 (Courage)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-813b-b144-cf1a81befeb2" class="bulleted-list"><li style="list-style-type:disc">G-22 성장 (Growth)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-818e-ad5c-ecb533b79342" class="bulleted-list"><li style="list-style-type:disc">G-23 회복 (Recovery)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8105-b232-fbeec38c2a56" class="bulleted-list"><li style="list-style-type:disc">G-24 자유로움 (Freedom)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81aa-a4d6-d9e80c9d73bc" class="">확장 팩 (5장)</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8112-a84f-f4e757ee9a33" class="bulleted-list"><li style="list-style-type:disc">G-25 배려 (Consideration)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c3-b732-ce21f6d42747" class="bulleted-list"><li style="list-style-type:disc">G-26 충전 (Recharge)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-814e-8ea3-e9e2791bcb89" class="bulleted-list"><li style="list-style-type:disc">G-27 배움 (Learning)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c7-8cc1-c5ac91714b8c" class="bulleted-list"><li style="list-style-type:disc">G-28 자기돌봄 (Self-care)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8173-8ebf-f74d912a40f1" class="bulleted-list"><li style="list-style-type:disc">G-29 성찰 (Reflection)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81e6-a922-fcc5f57d72fb" class="">G 단계 사용 가이드</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81e3-b301-c26c4fc17e83" class=""><strong>✅ 해야 할 것:</strong><br/>1. 구체적 돌봄 실천<br/>2. 관계 회복하기<br/>3. 의미 발견하기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81b7-84e2-d84244c0eaae" class=""><strong>❌ 하지 말아야 할 것:</strong><br/>1. 성급하게 괜찮아지려 하기<br/>2. 자기 돌봄을 이기적이라 생각하기<br/>3. “극복”으로 감정 무시하기</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8160-a99d-c080802ecef6"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-81fe-9a25-c183af4eb3cd" class="">PART 4. 실전 활용 가이드</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8135-8ed2-d68dff1a4365" class="">4.1 혼자 사용하기: 일상 감정 일지</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8111-aff3-c08b930b5010" class="">📔 기본 감정 일지 루틴</h3></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81d1-a3c2-fc7723454e8a" class="">🌅 아침 루틴 (10분)</h3></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81f6-b142-d83826aa1d1d" class="numbered-list" start="1"><li><strong>카드 뽑기:</strong> 직관으로 1장</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8166-bcda-d47ba61e3f49" class="numbered-list" start="2"><li><strong>읽기:</strong> 4단락 천천히</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-818e-b465-dda3c96eca5d" class="numbered-list" start="3"><li><strong>기록하기:</strong></li></ol></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2eae1f9d-ee86-81f8-8aea-cd220defcc00" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">📅 2026.01.12
+🃏 오늘의 카드: G-21 용기
+💭 메시지: &quot;무섭지만 해볼게&quot;
+📝 적용: 회의에서 의견 말하기</code></pre></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81ff-b113-c0b14b417449" class="">🌙 저녁 루틴 (15분)</h3></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8147-9c08-d7309234775e" class="numbered-list" start="1"><li><strong>회고:</strong> “오늘 어떤 감정을 느꼈나?”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8190-a130-ee2fe4ae7a50" class="numbered-list" start="2"><li><strong>카드 찾기:</strong> 해당하는 카드</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81e3-969a-e42b00cca77e" class="numbered-list" start="3"><li><strong>기록:</strong></li></ol></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2eae1f9d-ee86-8121-8d74-cf037f37b209" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">📅 2026.01.12
+🃏 오늘의 감정: E-05 불안
+💭 상황: 프레젠테이션 준비
+📝 돌봄: 깊은 호흡 실천
+🌱 배움: 완벽하지 않아도 괜찮다</code></pre></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8136-b62e-e88c6288c31d" class="">📝 주간 회고 템플릿</h3></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2eae1f9d-ee86-8141-8bb3-c3198f6c926d" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all"># 주간 감정 회고 (1/6-1/12)
+
+## 자주 느낀 감정 TOP 3
+1. E-05 불안 (4회)
+2. S-06 좌절 (3회)
+3. G-08 휴식 (2회)
+
+## 패턴 발견
+- 월요일마다 불안 → 주말 휴식 부족
+- 마감 전 좌절감 반복 → 계획 수정 필요
+
+## 이번 주 성장
+- 불안 시 호흡 실천
+- 자책하지 않고 휴식 선택
+
+## 다음 주 의도
+- G-26 충전: 주말 온전히 쉬기</code></pre></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-817d-b804-e70ba1d9011b"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81c8-bcbc-e5afaa347618" class="">4.2 관계에서 사용하기</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81aa-8eb1-f589f482c42a" class="">💑 연인/부부 사용법</h3></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8191-ba28-e0eca83a7e0b" class="">주간 “감정 체크인” (30분)</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8155-9b17-f0af5c384a14" class=""><strong>진행:</strong><br/>1. 각자 카드 1장 뽑기<br/>2. 나누기 (10분×2)<br/>3. 감사 카드 교환</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8110-b0ac-d8cae25636f6" class=""><strong>규칙:</strong><br/>- ❌ 판단/조언 금지<br/>- ✅ 듣기만 하기<br/>- ✅ “그랬구나” 공감</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-815d-851a-cf5a3033337f" class="">갈등 해결 도구</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8116-a874-eb5f3da81c82" class=""><strong>방법:</strong><br/>1. 각자 진정 시간 (30분-2시간)<br/>2. 감정 카드로 대화 시작<br/>3. “이 감정이 말하는 것” 나누기<br/>4. 함께 G 카드 찾기</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8133-94c0-da4ac94da9d6"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-816a-8761-c03250a4e3df" class="">👨‍👩‍👧‍👦 가족 사용법</h3></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81bc-814c-e056fd0c64c2" class="">저녁 식사 “감정 카드 릴레이”</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8135-9b70-fd9612822270" class=""><strong>진행:</strong><br/>1. 돌아가며 카드 뽑기<br/>2. 한 줄 나누기<br/>3. 응원 한 마디</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81cc-8777-ea86562aaa12" class=""><strong>연령별 활동:</strong><br/>- 유아(5-7): 그림으로 표현, E 기본 12장<br/>- 초등(8-13): 감정 일기, E 24장 + G 8장<br/>- 청소년(14-19): 자기 탐색, 기본 72장</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8133-99f3-ff7041d2316f"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-812c-bb04-e1807fc99bef" class="">4.3 교육/상담 현장 활용</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8167-8848-e23ce9e38686" class="">🧑‍🏫 학교 교육 (8주 커리큘럼)</h3></div><div style="display:contents" dir="ltr"><table id="2eae1f9d-ee86-8188-b3c1-ef6a0c75c642" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81ac-9689-e28a1ae30225"><th id="RuKS" class="simple-table-header-color simple-table-header">주차</th><th id="pM^r" class="simple-table-header-color simple-table-header">주제</th><th id="azkn" class="simple-table-header-color simple-table-header">활동</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81c1-b021-fedc31567362"><td id="RuKS" class="">1주</td><td id="pM^r" class="">RE:ESG 소개</td><td id="azkn" class="">철학 이해, 카드 체험</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81e2-9036-f173e3716302"><td id="RuKS" class="">2주</td><td id="pM^r" class="">기본 감정</td><td id="azkn" class="">“나의 감정 색깔” 그리기</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81f1-98de-f70319dbf498"><td id="RuKS" class="">3주</td><td id="pM^r" class="">신체와 감정</td><td id="azkn" class="">몸으로 감정 표현하기</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81e9-9ac2-d48cab42510d"><td id="RuKS" class="">4주</td><td id="pM^r" class="">관계 감정</td><td id="azkn" class="">“친구에게 전하기” 역할극</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-817a-9da4-d37dc362c175"><td id="RuKS" class="">5주</td><td id="pM^r" class="">자기 이해</td><td id="azkn" class="">“나는 누구인가?” 탐색</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-8120-b7c4-fa822ac06d43"><td id="RuKS" class="">6주</td><td id="pM^r" class="">돌봄과 회복</td><td id="azkn" class="">“나를 돌보는 10가지 방법”</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-817e-8f4d-d1116bbb7365"><td id="RuKS" class="">7주</td><td id="pM^r" class="">종합 실습</td><td id="azkn" class="">E-S-G 전 과정 체험</td></tr></div><div style="display:contents" dir="ltr"><tr id="2eae1f9d-ee86-81c8-83fd-cb175fe7c72b"><td id="RuKS" class="">8주</td><td id="pM^r" class="">나눔과 마무리</td><td id="azkn" class="">감정 카드 선물하기</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81b9-9ddc-f7ee0422cdf6" class="">🧑‍⚕️ 상담 현장 활용</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8184-b0c3-fd41b42596b9" class=""><strong>1. 인테이크 (초기 상담)</strong><br/>- 72장 펼쳐놓기<br/>- “최근 한 달간 느낀 감정 3-5장 선택”<br/>- 선택한 카드로 대화 시작</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81c0-9ed5-dde4f68bbf52" class=""><strong>2. 감정 추적</strong><br/>- 매 회기 시작 시 카드 선택<br/>- 4-6주 후 변화 확인</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-810e-ae34-f09d1eae4b35" class=""><strong>3. 트라우마 작업</strong> (전문가만)<br/>- 카드를 매개로 안전하게 거리두기<br/>- 재트라우마화 주의</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81c8-9428-e8603b6d90ff" class=""><strong>4. 집단 프로그램</strong><br/>- “감정 생태 회복 8주 워크숍”<br/>- 성인 8-12명<br/>- 주 1회, 2시간</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81e2-aea9-e2dbd6168be9"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8137-8ebe-fbc73bf8c091" class="">4.4 워크숍 프로그램 설계</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-815c-ab15-eea344907ea7" class="">🎪 단회성 워크숍 (3시간)</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8152-84f5-ed03b720bf7b" class=""><strong>1부: 만남과 이해 (60분)</strong><br/>- 0-10분: RE:ESG 소개<br/>- 10-30분: 철학 이해<br/>- 30-50분: 카드 체험<br/>- 50-60분: 소그룹 나눔</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81fc-a923-c75e34f216c5" class=""><strong>2부: 탐색과 실습 (90분)</strong><br/>- 60-80분: E 단계 탐색<br/>- 80-100분: S 단계 탐색<br/>- 100-120분: G 단계 실습<br/>- 120-150분: 창작 활동</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81df-abb0-c660129abb29" class=""><strong>3부: 나눔과 마무리 (30분)</strong><br/>- 150-170분: 작품 전시<br/>- 170-180분: 클로징</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8112-968f-eb47fa8b4076" class="">🎨 워크숍 활동 아이디어</h3></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81de-9b12-db86932fe7eb" class="numbered-list" start="1"><li><strong>감정 색상 맵</strong> - 72장을 색상별 분류</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8123-95ce-edcfe2a19581" class="numbered-list" start="2"><li><strong>감정 날씨 예보</strong> - “오늘 내 마음의 날씨는?”</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8188-8754-c3fdbba47b40" class="numbered-list" start="3"><li><strong>감정 타임라인</strong> - 인생 주요 사건별 감정 배치</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8192-ba91-e3f8e43b57b9" class="numbered-list" start="4"><li><strong>감정 만다라</strong> - 중심에 현재 감정, 주변에 관련 감정</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-812e-8146-f8f49bea9e43" class="numbered-list" start="5"><li><strong>감정 연극</strong> - 모둠별로 카드로 연극</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-816c-951f-e2bd343a712f" class="numbered-list" start="6"><li><strong>감정 음악 플레이리스트</strong> - 각 감정에 어울리는 노래</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81f3-b75a-d7b05bed6990" class="numbered-list" start="7"><li><strong>감정 시 쓰기</strong> - 자연 은유 확장하여 시 창작</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-817f-9899-eb499f883133" class="numbered-list" start="8"><li><strong>감정 드로잉</strong> - 색상, 선, 형태로 표현</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81f1-8bc7-ec22ed886e26" class="numbered-list" start="9"><li><strong>감정 편지</strong> - 과거/현재/미래의 나에게</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-81fb-90d9-ee5421dcb290" class="numbered-list" start="10"><li><strong>감정 카드 선물</strong> - 상대에게 필요한 카드</li></ol></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81c1-b079-fa241974d418"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-8110-8139-c436838430a0" class="">PART 5. 주의사항과 안전한 사용</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-811f-8b15-edbc568f7e1f" class="">5.1 확장팩 사용 시 주의사항</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-815d-8b2f-d0d75e5119d8" class="">🔴 전문가 동반 필수 카드</h3></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81b5-b478-e554ff963645" class="">S-25 자기혐오 (Self-hatred)</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8136-9ab9-e1a0c7cf2d24" class=""><strong>위험성:</strong><br/>- 자살/자해 위험 연결 가능<br/>- 심각한 우울증 증상<br/>- 전문적 치료 필요</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8114-9a6a-fb4c4a3b4e96" class=""><strong>사용 규칙:</strong><br/>- ❌ 혼자 사용 금지<br/>- ✅ 심리상담사와 함께만<br/>- ✅ 정신건강의학과 병행</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ec-8143-f3d356acc609" class=""><strong>긴급 연락처:</strong><br/>- 자살예방상담전화: 1393<br/>- 정신건강복지센터: 1577-0199</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8140-b4ec-dbf9a6e429ec"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81f3-b676-d83ee938af49" class="">🟡 신중한 사용 필요 카드</h3></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81bf-9d00-ddf2388f906a" class="">S-30 경멸 (Contempt)</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-817e-9a50-d4a782c88b2c" class=""><strong>위험성:</strong><br/>- 관계 파괴의 강력한 감정<br/>- 회복하기 어려운 상처<br/>- 이혼 예측 변수</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81a6-8e9f-d5d3ea1ea8df" class=""><strong>사용 규칙:</strong><br/>- ✅ 전문가 지도 하에<br/>- ✅ 안전한 환경에서만</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81c6-8320-cbe6424121d5" class="">E-28 격분 (Rage)</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8105-89b7-fb360c70e782" class=""><strong>위험성:</strong><br/>- 폭력으로 이어질 수 있음<br/>- 통제 불능 상태</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81d1-904f-d4c5b65381c5" class=""><strong>안전 조치:</strong><br/>1. 즉각적 행동 하지 않기<br/>2. 안전한 곳에서 에너지 방출<br/>3. 진정 후 카드 읽기</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-816e-bb21-fce3d8e67c74"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-814b-9177-f5032c3c84a9" class="">📋 확장팩 사용 체크리스트</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-815c-8a6f-d7e29949e32d" class=""><strong>사용 전 확인:</strong><br/>- [ ] 기본 72장 4주 이상 사용<br/>- [ ] 감정 인식이 안정적<br/>- [ ] 안전한 공간<br/>- [ ] 도움 받을 사람 있음<br/>- [ ] 전문가 연락처 확보</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-816a-8235-e98ca81e3160" class=""><strong>하나라도 체크 안 되면 → 기본 72장만 사용</strong></p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-816b-8f06-c650983934f5"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81ca-bd70-f34f2aa62686" class="">🚨 긴급 신호 인식</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8152-b29f-dc4d837ca132" class=""><strong>즉시 전문가 도움 필요:</strong></p></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8156-99a2-f6b4c89dcbec" class="numbered-list" start="1"><li><strong>자살/자해 생각</strong><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-812b-a2a0-c7110a27eacd" class="bulleted-list"><li style="list-style-type:disc">“죽고 싶어”</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d6-8cf5-dfd778bb18a5" class="bulleted-list"><li style="list-style-type:disc">구체적 계획</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-816b-b364-ee635acfb9be" class="numbered-list" start="2"><li><strong>일상 기능 불가</strong><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-812d-823e-fe58308a151f" class="bulleted-list"><li style="list-style-type:disc">2주 이상 출근/등교 불가</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8104-88d5-d6cd32d13d04" class="bulleted-list"><li style="list-style-type:disc">기본 관리 불가</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-813d-9aca-d4c622ce09e1" class="numbered-list" start="3"><li><strong>현실 검증력 상실</strong><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81b6-bcda-c2bb34807a43" class="bulleted-list"><li style="list-style-type:disc">환청/환시</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-817e-99bb-dace2f62f400" class="bulleted-list"><li style="list-style-type:disc">피해망상</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="2eae1f9d-ee86-8110-ad09-d98d4160c9db" class="numbered-list" start="4"><li><strong>타인 위험</strong><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c4-a4e2-f1a5f8a0f8fe" class="bulleted-list"><li style="list-style-type:disc">폭력 충동</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81df-b408-fedc6b948b8e" class="bulleted-list"><li style="list-style-type:disc">통제 불능 분노</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8113-85d7-cbdffcfd83ae" class=""><strong>→ 즉시 1393 or 119</strong></p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81f9-8419-e3c280cdb789"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-810a-a88b-cdcde6299399" class="">5.2 전문가 개입이 필요한 순간</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-812f-a33f-f0df0bc7c829" class="">🏥 전문가 상담 권장 상황</h3></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81ba-97bd-d6ab6764a4df" class="">1. 감정이 삶을 지배할 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d2-bee6-fbb37bd52ec3" class="bulleted-list"><li style="list-style-type:disc">감정 때문에 의사결정 불가</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-819f-9804-e463f2091e26" class="bulleted-list"><li style="list-style-type:disc">일상생활 불가능</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8158-9c7c-c08c1136a3ee" class="bulleted-list"><li style="list-style-type:disc">감정 조절 완전 실패</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8124-86a7-ffa22e1c8fd9" class="">2. 같은 카드가 반복될 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81cd-a438-e84c62f39d6f" class="bulleted-list"><li style="list-style-type:disc">한 달 이상 같은 감정</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81cd-8027-cd7bedc1fe0c" class="bulleted-list"><li style="list-style-type:disc">점점 악화되는 양상</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-816e-bb49-edfb49274132" class="bulleted-list"><li style="list-style-type:disc">돌봄 제안 효과 없음</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8122-8178-cfdb54fde425" class="">3. 관계가 파괴될 위험</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8128-883f-c61bd53daf6b" class="bulleted-list"><li style="list-style-type:disc">S-30 경멸이 지배적</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-813b-aca6-e8aca6faf6f7" class="bulleted-list"><li style="list-style-type:disc">S-14 원망 폭발 직전</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-819b-93dc-c93e43b680d3" class="bulleted-list"><li style="list-style-type:disc">폭력 충동</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8199-aa9f-c0d863678d52" class="">4. 트라우마 증상</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8178-9015-e0ac33050ede" class="bulleted-list"><li style="list-style-type:disc">E-15 얼어붙음 반복</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8173-91f9-cfa8a8504238" class="bulleted-list"><li style="list-style-type:disc">플래시백, 악몽</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-813e-b501-ff93c8980ea3" class="bulleted-list"><li style="list-style-type:disc">회피 행동 증가</li></ul></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81fd-8d2d-d3bcfa6dd2dc"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-815e-a1d6-c51c80a9ca0b" class="">🔍 자가 진단 체크리스트</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81d2-bbb5-c7b78561297e" class=""><strong>3개 이상 해당 시 전문가 상담:</strong></p></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8186-b7a9-d99ad404ba3b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">2주 이상 우울/불안 지속</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81ac-945e-f6b910a46c13" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">자살/자해 생각</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8129-8ad7-c63f80c74934" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">일상생활 불가능</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8167-821f-f818c989f305" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">인간관계 모두 파괴</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d1-82dd-dd34c860398f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">술/약물로 감정 조절</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8173-84e8-f15d41d18118" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">신체 증상 (두통, 위통)</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-818b-8777-f39c16395c8e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">과거 트라우마 지배</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81da-b911-eee6052c82f9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">타인 해치고 싶은 충동</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8125-9df8-c7fa6c78fabf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">현실 구분 어려움</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8119-8fc8-eabd53b39e09" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">카드가 전혀 도움 안 됨</span><div class="indented"></div></li></ul></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-812a-933f-cc8f60c9be39"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81c2-8764-edd41ecf4307" class="">💊 약물 치료가 필요할 수 있는 경우</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8161-9437-f228b18538b0" class=""><strong>카드는 약물/치료를 대체할 수 없습니다.</strong></p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81cc-911f-cc262ff4ab36" class="">정신건강의학과 방문 필요:<br/>- 우울증 (2주 이상 지속)<br/>- 불안장애 (일상 불가능)<br/>- PTSD<br/>- 양극성장애 (조울증)<br/>- 공황장애<br/>- 강박장애</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81e8-b26e-f2f7200096f7"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8133-a22b-fccf84051389" class="">5.3 긴급 도움 연결처</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-819e-b699-f8cfeb9bf085" class="">📞 한국 긴급 연락처</h3></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8181-a0c7-ce7d99c9bf56" class="">🆘 자살/자해 위기</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8137-b43e-ed01ce1ac1d5" class="bulleted-list"><li style="list-style-type:disc"><strong>1393</strong> 자살예방상담전화 (24시간)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8199-807a-cbc27e711005" class="bulleted-list"><li style="list-style-type:disc"><strong>1588-9191</strong> 생명의 전화</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-814e-af61-d8e82fdc0931" class="bulleted-list"><li style="list-style-type:disc"><strong>카카오톡</strong> “마음이음” (10:00-22:00)</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8141-a590-ecd03278edbd" class="">🧠 정신건강 상담</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8150-a49d-e9b8308f5572" class="bulleted-list"><li style="list-style-type:disc"><strong>1577-0199</strong> 정신건강복지센터</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8169-9b92-e7373ab14245" class="bulleted-list"><li style="list-style-type:disc"><strong>1388</strong> 청소년상담 (24시간)</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8145-8df9-dbea90ac3f00" class="bulleted-list"><li style="list-style-type:disc"><strong>1366</strong> 여성긴급전화</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81f4-b43d-cdf7acd77945" class="">🏥 응급 상황</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-811b-9a0e-f8d3e5ee2109" class="bulleted-list"><li style="list-style-type:disc"><strong>119</strong> 응급의료</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-811e-b05f-ca02ef0da250" class="bulleted-list"><li style="list-style-type:disc"><strong>112</strong> 경찰</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81d4-9d32-f38d14cb646a" class="">🌍 국제 긴급 연락처</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-817d-8853-eb48e10e629c" class="bulleted-list"><li style="list-style-type:disc">미국: 988</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-812e-b338-d79c71b2c8bf" class="bulleted-list"><li style="list-style-type:disc">영국: 116 123</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-810b-9aa6-df547984ebe5" class="bulleted-list"><li style="list-style-type:disc">호주: 13 11 14</li></ul></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8112-ba5a-d370fd8c17e2"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-8197-b1aa-cf07f0da5b69" class="">PART 6. 부록</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8115-98cf-fd631e645c5c" class="">6.1 전체 88장 카드 간단 인덱스</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81ee-accc-ec2e371d7c08" class="">💚 E (Emotion) - 29장</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81f1-8029-d33bb9d656ba" class=""><strong>기본 12장:</strong> 기쁨, 슬픔, 분노, 두려움, 불안, 외로움, 희망, 환희, 설렘, 우울, 걱정, 활력</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81d5-918f-cdeda36e7e23" class=""><strong>신체화 6장:</strong> 긴장, 숨막힘, 얼어붙음, 피로, 무거움, 떨림</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8163-9b78-f1794a27de29" class=""><strong>복합 6장:</strong> 혼란, 상실, 질투, 부러움, 공포, 놀람</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8134-a6b0-e1a884460126" class=""><strong>확장 5장:</strong> 혐오, 민망함, 당혹감, 격분⚠️, 동요</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-819e-a0d7-d6aa5e68c028"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8156-92f3-f8c469774a58" class="">💙 S (Self) - 30장</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81c7-9bec-fd91abd64165" class=""><strong>자기 관련 12장:</strong> 자책, 죄책감, 수치심, 자부심, 무력감, 좌절, 성취, 만족, 그리움, 공허함, 체념, 연민</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8196-913f-fbe9a932a5f7" class=""><strong>관계 6장:</strong> 배신감, 원망, 실망, 서운함, 경계심, 부담감</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81b4-8f5c-f16bab56b191" class=""><strong>내면 복잡성 6장:</strong> 씁쓸함, 착잡함, 허무함, 무감각, 냉담, 갈등</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ff-a81f-fbac09e8a4c6" class=""><strong>확장 6장:</strong> 자기혐오🔴, 자기연민, 뿌듯함, 미련, 회한, 경멸🟡</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81e7-a42e-cc48bee7d4c4"/></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81b2-8123-e1055a46c2c1" class="">💛 G (Ground) - 29장</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81e6-b2a5-e693ebea0f8e" class=""><strong>안정/평화 8장:</strong> 평화, 안정, 편안함, 차분함, 안도감, 평온, 고요함, 휴식</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-815b-8197-d17a9f1d17a5" class=""><strong>관계/연결 8장:</strong> 사랑, 감사, 애정, 유대, 포용, 따뜻함, 친밀함, 교감</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81c1-b143-eea0f92784d2" class=""><strong>회복/성장 8장:</strong> 수용, 놓아줌, 용서, 희망, 용기, 성장, 회복, 자유로움</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8131-bb95-f272e3c36bd4" class=""><strong>확장 5장:</strong> 배려, 충전, 배움, 자기돌봄, 성찰</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-8161-8972-ecef68576067"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81b5-bac8-f8db00b45c10" class="">6.2 상황별 추천 카드</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8131-ab6c-e58bfc3109e3" class="">😔 기분이 안 좋을 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-810b-8659-ec38afb51859" class="bulleted-list"><li style="list-style-type:disc">E-10 우울, S-06 좌절, E-06 외로움</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-812c-996b-f5c8e820cbd9" class="bulleted-list"><li style="list-style-type:disc"><strong>돌봄:</strong> G-08 휴식, G-26 충전</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8102-b9cf-fa4525fd641f" class="">😰 불안하고 두려울 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8116-aaa5-fd34edd70d6e" class="bulleted-list"><li style="list-style-type:disc">E-05 불안, E-04 두려움, E-11 걱정</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d3-a31a-eedc8640cb2b" class="bulleted-list"><li style="list-style-type:disc"><strong>돌봄:</strong> G-04 차분함, G-21 용기</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8171-b296-ffe47ea97761" class="">😠 화나고 짜증날 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8190-96b9-f3f88e1fbca0" class="bulleted-list"><li style="list-style-type:disc">E-03 분노, S-16 서운함, S-14 원망</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8108-80c6-dc191f23a35d" class="bulleted-list"><li style="list-style-type:disc"><strong>돌봄:</strong> G-19 용서, G-18 놓아줌</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8130-8712-c6bd25e41dcc" class="">😢 슬프고 상실감이 들 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c4-af07-e8a44cecb3b1" class="bulleted-list"><li style="list-style-type:disc">E-02 슬픔, E-20 상실, S-09 그리움</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81d3-91de-e327c050eb2c" class="bulleted-list"><li style="list-style-type:disc"><strong>돌봄:</strong> G-17 수용, G-23 회복</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-811a-a30a-ec26629d48f7" class="">😶 무감각하고 냉담할 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81e8-975b-f47f609a9365" class="bulleted-list"><li style="list-style-type:disc">S-22 무감각, S-23 냉담, E-15 얼어붙음</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-8110-a301-f53891f07c5e" class="bulleted-list"><li style="list-style-type:disc"><strong>돌봄:</strong> G-26 충전, G-28 자기돌봄</li></ul></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-810c-91c2-d5c965fa113e" class="">😊 좋은 일이 있을 때</h3></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-813a-b47a-d5508c09ec49" class="bulleted-list"><li style="list-style-type:disc">E-01 기쁨, S-07 성취, E-08 환희</li></ul></div><div style="display:contents" dir="auto"><ul id="2eae1f9d-ee86-81c4-a254-f0e3f2977465" class="bulleted-list"><li style="list-style-type:disc"><strong>돌봄:</strong> G-10 감사, G-22 성장</li></ul></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81a5-952f-ed0935b7c93a"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81a8-a2d5-d1a3d6cc63ee" class="">6.3 감정 탐색 워크시트</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8189-bbf0-efd950f95c20" class="">📝 일일 감정 체크인</h3></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2eae1f9d-ee86-81fd-8293-e7cafbbb1cab" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">📅 날짜: ______________
+🃏 오늘의 카드: _______________
+💭 뽑은 이유: _________________
+📍 느낀 상황: _________________
+🎨 감정의 색깔: _______________
+🌡️ 강도 (1-10): _______________
+💬 감정의 메시지: ______________
+🌱 오늘의 돌봄: _______________
+✨ 내일의 나에게: ______________</code></pre></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8169-bfdb-d5fd53622599" class="">📝 주간 감정 리뷰</h3></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2eae1f9d-ee86-81d3-9753-d3148aeb1b8a" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">📅 기간: _______월 _______일~_______일
+
+📊 자주 느낀 감정 TOP 3:
+1. _________________ (___회)
+2. _________________ (___회)
+3. _________________ (___회)
+
+🔍 발견한 패턴:
+_________________________________
+
+💡 알게 된 것:
+_________________________________
+
+🌱 이번 주 성장:
+_________________________________
+
+🎯 다음 주 의도:
+_________________________________</code></pre></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8170-b983-d2c45fe8c196" class="">📝 E-S-G 감정 여정</h3></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2eae1f9d-ee86-81e8-98af-d48b3f866f64" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">📅 날짜: ______________
+
+💚 E (Emotion)
+카드: ________________
+몸의 감각: ________________
+언제부터: ________________
+
+💙 S (Self)
+카드: ________________
+진짜 욕구: ________________
+반복 패턴: ________________
+
+💛 G (Ground)
+카드: ________________
+오늘 실천: ________________
+배운 것: ________________</code></pre></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81ed-96a4-d967d15b8452"/></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-81b3-a4d9-e4287033f2bc" class="">6.4 FAQ</h2></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81d4-8b9f-c6cce6aa9fa6" class="">기본 사용법</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8101-879b-e3088b26bd05" class=""><strong>Q1. 어디서부터 시작?</strong><br/>A. Part 1 철학 이해 → 직관 뽑기 → 일지 시작</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-818d-b1ce-edbb8c27d6f2" class=""><strong>Q2. 하루에 몇 장?</strong><br/>A. 초보자 1장, 익숙해지면 1-3장</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81e2-baef-f51b52169dbb" class=""><strong>Q3. 카드가 안 끌리면?</strong><br/>A. 의도 선택 or 펼쳐놓고 찾기</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8158-b32e-f7ad0a48ed17" class="">해석과 적용</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-816e-bd88-d31b623870aa" class=""><strong>Q4. 의미가 이해 안 될 때?</strong><br/>A. 자연 은유 떠올리기, 며칠 후 다시 읽기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-818e-b51c-c55300da5f3d" class=""><strong>Q5. 뽑은 카드가 다른 것 같아요</strong><br/>A. 무의식 메시지일 수 있음, 정 아니면 다시 뽑기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-817e-b381-c0ca0797fa56" class=""><strong>Q6. 같은 카드가 계속 나와요</strong><br/>A. 4주 이상 → 전문가 상담 고려</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8109-ae46-ca9a511a7689" class="">효과와 한계</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8124-8477-dc18c8fcade5" class=""><strong>Q7. 얼마나 써야 효과?</strong><br/>A. 즉시: 감정 인식, 2-4주: 패턴 발견, 2-3개월: 감정 조절</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81fd-abe1-f71ce1b215fb" class=""><strong>Q8. 카드만으로 치료?</strong><br/>A. <strong>아니요.</strong> 감정 인식 도구일 뿐, 치료 대체 ❌</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-8193-84d5-dcd960c036a0" class="">주의사항</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8176-bc60-d94d928f141b" class=""><strong>Q11. 확장팩 언제?</strong><br/>A. 기본 72장 4주 이상 + 안전 환경 + 전문가 연락처</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ea-8c07-d6b18c1c26d7" class=""><strong>Q12. 위기 상황이 생기면?</strong><br/>A. 즉시 1393 or 119, 카드 중단, 안전 최우선</p></div><div style="display:contents" dir="auto"><h3 id="2eae1f9d-ee86-81f8-aafa-c97002d18d65" class="">실용 정보</h3></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8122-bc71-e5e70cc11c51" class=""><strong>Q13. 카드 분실</strong><br/>A. 나머지로 계속 사용, 인덱스에서 읽기</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8127-b812-cd36ecfb7ae0" class=""><strong>Q14. 디지털 버전?</strong><br/>A. PDF 가이드북 제공, 향후 앱 출시 예정</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8192-aa47-f4e0d5cefba0" class=""><strong>Q15. 상업적 사용?</strong><br/>A. 개인 자유, 비영리 출처 표기, 영리 별도 문의</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81b3-a508-f0fb545b1370"/></div><div style="display:contents" dir="auto"><h1 id="2eae1f9d-ee86-81b2-adbb-ef103fac7e6b" class="">마치며</h1></div><div style="display:contents" dir="auto"><h2 id="2eae1f9d-ee86-8102-8c48-cb4b38f7bb7d" class="">🌱 당신에게</h2></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8154-afe0-ccbf187dcafe" class="">RE:ESG 감정 카드 88장 가이드북을 읽어주셔서 감사합니다.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-811d-a925-dd82d74084fd" class="">이 카드는 <strong>당신의 감정 생태를 함께 가꾸어갈 동반자</strong>입니다.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8150-bb7d-cf2017156f49" class="">완벽하게 사용하려 애쓰지 마세요.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-812c-b150-edd9b7fc47c2" class="">당신의 속도로, 당신의 방식으로 탐색하세요.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-816d-afb9-ef855d3f2842" class="">어떤 감정을 만나든,</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8158-b86a-cefc1eaaec95" class="">그 감정은 당신에게 필요한 메시지를 전하고 있습니다.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-811e-854b-ff22d501de0d" class="">억압하지 말고,</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81c7-b985-debd36e62fa5" class="">판단하지 말고,</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81b0-9021-e4601227eccc" class="">있는 그대로 느껴보세요.</p></div><div style="display:contents" dir="auto"><blockquote id="2eae1f9d-ee86-8157-9663-c745c0651edc" class="">감정은 나의 생태이며,<div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-813b-b2dd-e3104e41e1f5" class="">함께 울고 피어나는 관계가 곧 나의 사회입니다.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81ce-ae5e-c7acaaeb1366" class="">그리고 내 삶의 리더십은,</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8104-a077-ec949e38033c" class="">나를 잃지 않기 위한 감정 윤리에서 비롯됩니다.</p></div></blockquote></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8134-8fea-e85bfdc11257" class=""><strong>Emotion. Self. Ground.</strong></p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8124-bad2-e50ce45a0d71" class="">당신은 이미 그 여정을 걷고 있습니다.</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8188-96c0-d0d1b1f07067" class="">🌿</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81fa-8ce7-c1dcc39c4faa"/></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81a7-804a-f482066bc6be" class=""><strong>RE:ESG 감정 카드 88장 종합 가이드북</strong></p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81dd-ab96-f51e497852e1" class="">초판 발행: 2026년 1월</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-819f-b944-d77ea48a9705" class="">저자: 아마도랩 (Amado Lab)</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-80f3-aa49-febd6af10c61" class="">http://amadolab.co.kr</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-808a-8556-f32a5605bf80" class="">amadolab.official@gmail.com</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8181-82a3-e5456d5da659" class="">© 2026 Amado Lab. All rights reserved.</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-812a-9fb6-f288c4e70f6e"/></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-81a3-9c15-f17f06567362" class=""><strong>📚 추천 자료</strong><br/>- 『감정은 어떻게 만들어지는가』 리사 펠드먼 배럿<br/>- 『비폭력대화』 마셜 로젠버그<br/>- 『자기 자비』 크리스틴 네프</p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-818c-b1fe-ce401d03d5ac" class=""><strong>🌍 긴급 연락처</strong><br/>- 자살예방: 1393<br/>- 정신건강: 1577-0199<br/>- 청소년상담: 1388</p></div><div style="display:contents" dir="auto"><hr id="2eae1f9d-ee86-81b9-a8d6-df486bfd0a6c"/></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8100-9e49-e729ed1b809a" class=""><strong>END OF GUIDE</strong></p></div><div style="display:contents" dir="auto"><p id="2eae1f9d-ee86-8006-8f3a-ebea71dd0684" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
